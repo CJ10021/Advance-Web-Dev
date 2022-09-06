@@ -1,0 +1,356 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Lab2-1</title>
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+	<link rel="stylesheet" type="text/css" href="CSS/style.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+	<!------------------------------BODY------------------------------------------------>
+<body>
+	<!---------------------------------------------------->	
+	<header>
+		<div class="position-relative text-center p-5" style="background-color: #daf7a6;">
+			<div class="position-absolute top-50 start-0 translate-middle-y">
+				<img src="MEDIA/global.png" alt="Logo"/>
+			</div>
+	
+			<div class="position-relative">
+				<p class="position-absolute top-50 start-0 translate-middle-y fs-4" style="margin-left: 20px;">ITWD6.408 </p>
+			</div>
+	
+			<div class="position-relative">
+				<div class="position-absolute top-50 start-50 translate-middle horizontal-nav">
+					<ul>
+						<li><a href="index.html">HOME</a></li>
+						<li><a href="forms.html">FORMS</a></li>
+						<li><a href="xml-rss.html">XML/JSON</a></li>
+						<li class="active"><a href="javascript.html">JAVASCRIPT</a></li>
+						<li><a href="research.html">RESEARCH</a></li>	
+					</ul>
+				</div>			
+			</div>
+	
+			<div class="position-relative">
+				<div class="nav-1 position-absolute top-50 end-0 translate-middle-y" style="font-size: 4.0em; cursor: pointer;" onclick="openNav()">≡</div>
+			</div>
+		</div>
+
+		<!--Curtain menu: collapse this menu as default when loading the page-->
+		<nav id="curtain-nav">
+			<!--Add a close button (X) hyperlink on the top left corner-->
+			<a href="javascript:void(0)" class="nav-close-button" onclick="closeNav()">❌</a>
+			<div class="curtain-nav-content">
+				<ul>
+					<li><a href="index.html">HOME</a></li>
+					<li><a href="forms.html">FORMS</a></li>
+					<li><a href="xml-rss.html">XML/JSON</a></li>
+					<li class="active"><a href="javascript.html">JAVASCRIPT</a></li>
+					<li><a href="research.html">RESEARCH</a></li>	
+				</ul>
+			</div>
+		</nav>
+	</header>
+
+	<div class="container-fluid">
+		<div class="row">
+			<!--Button section-->
+			<div class="col-12 col-md-2">
+				<div class="container-fluid">
+					<div class="row justify-content-around">
+						<!--Button 1-->						
+						<button class="col-6 col-md-12 btn btn-primary bg-warning" type="button" 
+								data-bs-toggle="collapse" data-bs-target="#button1" 
+								aria-expanded="false" aria-controls="button1">DEMO 1</button>
+						<!--Button 2-->
+						<button class="col-6 col-md-12 btn btn-primary" type="button" 
+								data-bs-toggle="collapse" data-bs-target="#button2" 
+								aria-expanded="false" aria-controls="button2">DEMO 2</button>
+						<!--Button 3-->						
+						<button class="col-6 col-md-12 btn btn-primary bg-warning" type="button" 
+								data-bs-toggle="collapse" data-bs-target="#button3" 
+								aria-expanded="false" aria-controls="button3">DEMO 3</button>
+						<!--Button 4-->
+						<button class="col-6 col-md-12 btn btn-primary" type="button" 
+								data-bs-toggle="collapse" data-bs-target="#button4" 
+								aria-expanded="false" aria-controls="button4">DEMO 4</button>
+					</div>			
+				</div>			
+			</div>
+			
+			<!--Main content section-->
+			<div class="col-12 col-md-10">
+				<div class="row">
+				  <div class="col-12">
+					<!--Content area 1 for button 1-->
+					<div class="collapse show multi-collapse" id="button1">
+						<div class="card card-body">Purpose:<br>
+							<p>Showing all the best laptop for pb tech website</p>
+							<section class="bg-warning bg-opacity-50 text-center border border-warning border-4">
+								<h3 class=>AUTOMATIC SLIDESHOW</h3>
+								<h4 id="auto-slide-title"></h4>
+								<img id="auto-slide-image" src="MEDIA/NBKASU245102__1.webp" height="250px">
+								<p>Description: PB tech showes us the best recommended laptop</p>
+							</section>
+							<br>
+							<section class="bg-warning bg-opacity-50 text-center border border-warning border-4">
+								<h3>MANUAL SLIDESHOW</h3>
+								<h4 id="manual-slide-title">ASUS Expertbook P2451FA-EB0321R Business Laptop</h4>
+								<img id="manual-slide-image" src="MEDIA/NBKASU245102__1.webp" height="250px">
+								<br>
+								<button class="bg-success" onclick="previousMovie()">PREVIOUS</button>
+								<button class="bg-success" onclick="nextMovie()">NEXT</button>
+								<p>Description: PB tech showes us the best recommended tablet</p>
+							</section>
+							</div>
+						</div>
+					</div>
+				</div>
+				  
+				  <!--Content area for button 2-->
+				  <div class="col-12">
+					<div class="collapse multi-collapse" id="button2">
+					  <div class="card card-body overflow-auto">Purpose:<br>
+						<p>6 important that must be adhered to in order to create a valid XML file: </p>
+							<!--EXERCISE 2: DROPDOWN MENU-->
+							<h2>DROPDOWN MENU TO SELECT A MOVIE</h2>
+							<p>Select item: <select id="my-movieList" onchange="displayMyMovie()"></select></p>
+							<section>
+								<h4 id="my-movieTitle">ASUS Expertbook P2451FA-EB0321R Business Laptop</h4>
+								
+								<h5 style="display: inline;">Price: $<p style="display: inline;" id="my-movieYear">1690</p></h5>
+								<br>
+								<img id="my-movieImageURL" src="MEDIA/NBKASU245102__1.webp" height="250px">
+							</section>
+
+							<br>
+
+							<!--Exercise 3-->
+							<section>
+								<h4>Add new item (product) to the exisiting list: </h4>
+								<label>Title: </label>
+								<input type="text" id="my-movie-title" size="70" placeholder="title">
+								<br>
+								<label>Price: </label>
+								<input type="number" id="my-movie-year" size="70" placeholder="price">
+								<br>
+								<label>Image URL: </label>
+								<input type="text" id="my-movie-image-url" size="70" placeholder="image url">
+								<br>
+								<input type="button" value="Add to List" onclick="AddItemToList()">
+							</section>						
+					  	</div>
+					</div>
+				</div>
+
+				<div class="col-12">
+					<div class="collapse multi-collapse" id="button3">
+					<div class="card card-body overflow-auto">Purpose:<br>
+						<p>User can comment what they think on the product</p>
+							<section>
+								<div class="col-12 col-md-6">
+									<div class="p-3 border border-4 bg-light">
+										<div class="text-center">
+											<br><img class="comment-box1" id="my-movieImageURL" src="MEDIA/NBKASU245102__1.webp" height="250px"></div>
+											<div class="text-left"><p>Product description: <br>
+												Delivering all-round productivity to get you through the work day, ASUS ExpertBook P2 is the complete business package. <br>
+												This lightweight laptop pairs military grade robustness with corporate level security, and features the new SensePoint pointing nub.</p>
+										</div>
+									</div>
+								<br>
+								<h4>Comments: </h4>
+								<div id="comment-list"> </div>
+								<h4>Add your comment: </h4>
+								<label>Name: </label>
+								<input type="text" id="comment_name" placeholder="your name" size="90">
+								<br>
+								<label>Comment: </label><br>
+								<textarea id="comment_text" cols="100" rows="10">
+								</textarea>
+								<br>
+								<button onclick="addComment()">POST</button>
+							</section>		
+						</div>
+					</div>
+				</div>
+
+				<div class="col-12">
+					<div class="collapse multi-collapse" id="button4">
+					  <div class="card card-body overflow-auto">Purpose:<br>
+						<p>6 important that must be adhered to in order to create a valid XML file: </p>
+							<!--EXERCISE 2: DROPDOWN MENU-->
+							<h2>SHOPPING-CART</h2>
+							<br>
+							<div class="">
+								<a href="../Assignment 1 ~ Due unknown/view item.html" class="notification">
+									<span>VIEW ITEMS IN SHOPPING-CART HERE</span>
+									<span class="badge">4</span>
+								</a>
+							</div>
+							<br>
+							<div class="">
+								<a href="open shopping-cart.html" class="notification">
+									<span>OPEN SHOPPING-CART HERE</span>
+									<span class="badge">4</span>
+								</a>
+							</div>
+							<br>
+							<!--Content area for button 2-->
+							<div class="row g-2">
+								<div class="col-12 col-md-4">
+									<div class="p-5 border bg-light">
+										<div class="text-center">ASUS Expertbook P2451FA-EB0321R Business Laptop
+											<br><img class="cart-box1" id="my-movieImageURL" src="MEDIA/NBKASU245102__1.webp"><br>Price: $1,690<br><br>
+											<button id="likeButton" onclick="like()">&#128077;</button>
+											<p id="likeNumber" style="display: inline-block;">0</p>
+											<button id="dislikeButton" onclick="dislike()">&#128077;</button>
+											<p id="dislikeNumber" style="display: inline-block;">0</p><br></div>
+											<div class="text-left"><p>Description: Performance - Geared for productivity
+											ExpertBook P2 is designed for modern businesses with an eye on the future. Latest-generation Intel® Core™ i7 processors deliver the fast and responsive performance you need, 
+											with a dual storage design that provides ample storage space and faster data access. 
+											ExpertBook P2 is future proof as well, with an easy access design that makes it easy to upgrade internal components.
+											
+											- Windows 10 Pro
+											- 10th Gen Intel® Core™ i7 CPU
+											- 16GB DDR4 RAM
+											- 512GB SSD
+											- Up to 13hrs battery life[2]</p>
+											<div class="text-center"><button class="btn btn-primary" onclick="myFunction()">Add To Cart</button></div>
+											<div id="snackbar">Product has been added...</div>
+										</div>
+									</div>
+								</div>
+								<div class="col-12 col-md-4">
+									<div class="p-5 border bg-light">
+										<div class="text-center">HP Probook 450 G8 Business Laptop
+											<br><img class="cart-box1" id="my-movieImageURL" src="MEDIA/NBKHNB450852__1.webp"><br>Price: $1,537<br><br>
+											<button id="likeButton" onclick="like2()">&#128077;</button>
+											<p id="likeNumber" style="display: inline-block;">0</p>
+											<button id="dislikeButton" onclick="dislike2()">&#128077;</button>
+											<p id="dislikeNumber" style="display: inline-block;">0</p><br></div>
+											<div class="text-left"><p>Description: Modern design for today's workstyles
+												With a new compact design, the HP ProBook 450 Laptop PC delivers commercial performance, security, and durability to professionals at growing companies who move from desk to meeting room to home.
+												
+												A new design that fits modern workstyles
+												The compact, light, slim chassis with aluminum components is easy to carry from place to place. Enjoy an over 87-percent screen-to-body ratio and a quiet, responsive keyboard.
+												
+												Power that lasts
+												Equipped with the latest Intel® processor and high- performance memory.</p>
+												<div class="text-center"><button class="btn btn-primary" onclick="myFunction()">Add To Cart</button></div>
+												<div id="snackbar">Product has been added...</div>
+											</div>
+										</div>
+									</div>
+								<div class="col-12 col-md-4">
+									<div class="p-5 border bg-light">
+										<div class="text-center">HP Zbook Firefly 14 G8 business
+											<br><img class="cart-box1" id="my-movieImageURL" src="MEDIA/NBKHNB5192727__1.webp"><br>Price: $2,187<br><br>
+											<button id="likeButton" onclick="like()">&#128077;</button>
+											<p id="likeNumber" style="display: inline-block;">0</p>
+											<button id="dislikeButton" onclick="dislike()">&#128077;</button>
+											<p id="dislikeNumber" style="display: inline-block;">0</p><br></div>
+											<div class="text-left"><p>Description: WORLD'S SMALLEST AND LIGHTEST MOBILE WORKSTATION1 - MANAGE IT ON THE MOVE
+												Starting at just 2.98 lbs, our most mobile ZBooks are made to move. 3X faster Wi-Fi®, gigabit-class 5G, longer better battery life, and HP SureView Reflect equip you for long days offsite.
+												
+												- 14" diagonal Display
+												- 17.95mm Thin
+												- 2.98lbs Light 
+												11th GEN INTEL CORE PROCESSORS
+												Bring your ideas to life quickly and effectively with up to 4.2 GHz of acceleration when you need it most NVIDIA T500 graphics.</p>
+												<div class="text-center"><button class="btn btn-primary" onclick="myFunction()">Add To Cart</button></div>
+												<div id="snackbar">Product has been added...</div>
+											</div>
+										</div>
+									</div>
+								<div class="col-12 col-md-4">
+									<div class="p-5 border bg-light">
+										<div class="text-center">MSI Modern 15 A11MU Ultrabook
+											<br><img class="cart-box1" id="my-movieImageURL" src="MEDIA/NBKMSI1511879__1.webp"><br>Price: $1,599<br><br>
+											<button id="likeButton" onclick="like()">&#128077;</button>
+											<p id="likeNumber" style="display: inline-block;">0</p>
+											<button id="dislikeButton" onclick="dislike()">&#128077;</button>
+											<p id="dislikeNumber" style="display: inline-block;">0</p><br></div>
+											<div class="text-left"><p>Description: Modern 15
+												- 11th Gen. Intel® Core™ i7 processor
+												- Windows 11 Home
+												- Ultra-light 1.6kg, Ultra-slim 16.9-18.9mm
+												- Thin bezel IPS-level panel
+												- Up to 1.5X Faster than previous gen
+												- Up to 5.0 GHz Single Core Turbo
+												
+												Live in everyday passion - Modern 15
+												Let your passion keep up with your dynamic lifestyle. Whether you are exploring campus life or pursuing your career, 
+												with the latest 11th Gen. Intel® Core™ i7 processors and up to NVIDIA® discrete graphics, you will breathtaking new wonders through the Modern series.</p>
+												<div class="text-center"><button class="btn btn-primary" onclick="myFunction()">Add To Cart</button></div>
+												<div id="snackbar">Product has been added...</div>
+											</div>
+										</div>
+									</div>
+								<div class="col-12 col-md-4">
+									<div class="p-5 border bg-light">
+										<div class="text-center">Apple 16" Macbook Pro M1 Pro
+											<br><img class="cart-box1" id="my-movieImageURL" src="MEDIA/NBKAPP162151211__1.webp"><br>Price: $4,199<br><br>
+											<button id="likeButton" onclick="like()">&#128077;</button>
+											<p id="likeNumber" style="display: inline-block;">0</p>
+											<button id="dislikeButton" onclick="dislike()">&#128077;</button>
+											<p id="dislikeNumber" style="display: inline-block;">0</p><br></div>
+											<div class="text-left"><p>Description: The display on the 14-inch MacBook Pro has rounded corners at the top. When measured as a standard rectangular shape, the screen is 14.2 inches diagonally (actual viewable area is less).
+												[2] Actual rating of 69.6 watt-hours (14-inch model) or 99.6 watt-hours (16-inch model). Testing conducted by Apple in September 2021 using preproduction 
+												14-inch MacBook Pro systems with Apple M1 Pro, 8-core CPU, 14-core GPU, 16GB of RAM and 512GB SSD; and preproduction 16-inch MacBook Pro systems with Apple M1 Pro.</p>
+												<div class="text-center"><button class="btn btn-primary" onclick="myFunction()">Add To Cart</button></div>
+												<div id="snackbar">Product has been added...</div>
+											</div>
+										</div>
+									</div>
+								<div class="col-12 col-md-4">
+									<div class="p-5 border bg-light">
+										<div class="text-center">HP Probook 450 G9 Business Laptop
+											<br><img class="cart-box1" id="my-movieImageURL" src="MEDIA/NBKHNB450903__1.webp"><br>Price: $1,592<br><br>
+											<button id="likeButton" onclick="like()">&#128077;</button>
+											<p id="likeNumber" style="display: inline-block;">0</p>
+											<button id="dislikeButton" onclick="dislike()">&#128077;</button>
+											<p id="dislikeNumber" style="display: inline-block;">0</p><br></div>
+											<div class="text-left"><p>Description: Essential features in a modern design
+												The HP ProBook 450 Laptop provides growing businesses with the commercial-grade performance, HP Wolf Security for Business, and durability in a compact design. This PC is powered by an Intel® processor and protected with always-on security you can trust.
+												
+												The HP ProBook 450 Laptop provides growing businesses with a durable PC equipped with HP Wolf Security for Business that delivers commercial-grade performance in a compact design.
+												
+												Designed for hybrid workstyles
+												Refined.</p>
+												<div class="text-center"><button class="btn btn-primary" onclick="myFunction()">Add To Cart</button></div>
+												<div id="snackbar">Product has been added...</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
+
+	<!---------------------------------------------------->	
+	<!--Footer section-->
+	<footer>
+		<div class="fa-align">
+			<a href="#" class="fa fa-linkedin"></a>
+			<a href="#" class="fa fa-youtube"></a>
+			<a href="#" class="fa fa-twitter"></a>
+			<a href="#" class="fa fa-facebook"></a>
+			<a href="#" class="fa fa-instagram"></a>
+		</div>
+
+		<div class="created-text"> &copy;Created by: Carl Inguanzo <br />
+		</div>
+	</footer>
+	
+	<!--Embed the js file at the bottom of the html file-->
+	<script type="text/javascript" src="JS/javascript.js">
+	</script>
+
+</body>
+</html>

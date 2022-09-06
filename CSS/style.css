@@ -1,0 +1,1262 @@
+/*-------------------------------------------------*/
+/* MOBILE FIRST APPROACH
+   All the below CSS styles are valid for Mobile (small) devices
+   Link: https://www.w3schools.com/css/css_rwd_mediaqueries.asp
+  
+   CSS Relative Unit
+   Link: https://www.w3schools.com/cssref/css_units.asp
+         https://css-tricks.com/css-font-size/
+         https://developer.mozilla.org/en-US/docs/Web/CSS/font-size
+*/
+
+* {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	background: #f4f4f4;	
+	font-family: "Times New Roman", Times, serif;
+	font-size: 16px;/*Set the baseline font size for the whole website*/
+}
+
+/*Footer Area*/
+footer {
+	height: 15vh;
+	background-color: #DAF7A6;
+	position: relative;
+}
+
+.created-text {
+	flex: 0;
+	
+	/*Centering both vertical and horizontal*/
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	position: absolute;
+
+	top: 65%;
+	left: 20%;
+}
+
+
+.fa-align {
+	flex: 1;
+
+	display: flex;
+	justify-content: left;
+	align-items: center;
+	position: absolute;
+
+	top: 5%;
+	left: 5%;
+}
+
+.fa {
+	padding: 20px;
+	font-size: 30px;
+	width: 55px;
+	text-align: center;
+	text-decoration: none;
+	margin: 5px 2px;
+	border-radius: 50%;
+}
+  
+.fa:hover {
+	  opacity: 0.7;
+}
+
+.fa-facebook {
+	background: #3B5998;
+	color: white;
+ }
+  
+.fa-twitter {
+	background: #55ACEE;
+	color: white;
+}
+
+.fa-linkedin {
+	background: #007bb5;
+	color: white;
+}
+
+.fa-instagram {
+	background: #125688;
+	color: white;
+}
+
+.fa-youtube {
+	background: #bb0000;
+	color: white;
+}
+
+/*Header Area*/
+/*---------------------------------*/
+/*CSS flexbox: 1D Card Layout
+  Link 1: https://codelikethis.com/lessons/responsive-layout/flexbox-layout 
+  Link 2: https://medium.com/@merveyuksek/webpage-layout-examples-with-flexbox-88287f010a08
+*/
+.flexbox-container {
+	/*flexbox container*/
+	display: flex;
+	flex-direction: row;/*display on a row => horizontally*/  
+	
+	background-color: #daf7a6;
+	min-height: 10.4vh;
+}
+
+.box-1 {
+	flex: 0; /*wrap the content*/
+	display: flex;
+	justify-content: left;
+	align-items: center;
+}	
+
+.box-2 {
+	flex: 1;
+	
+	/*Centering both vertical and horizontal*/
+	display: flex;
+	font-size: 1.5em;
+	justify-content: left;
+	align-items: center;
+	margin-left: 4px;
+}
+  
+.box-3 {
+    flex: 4; /*horizontal nav on desktop*/
+	
+	/*Centering the content both vertical and horizontal*/
+	display: flex;
+	justify-content: center;
+	align-items: center;		
+}
+
+.box-4 {
+    flex: 1;/*Curtain menu*/
+	
+	display: flex;
+	font-size: 4.0em;
+	cursor: pointer;
+	justify-content: right;
+	align-items: center;
+	margin-right: 1cm;
+}
+
+
+/*horizontal nav*/
+.horizontal-nav {
+	display: none; /*Hide on mobile devices*/
+}
+   
+/*Curtain menu*/
+nav {
+	padding: 10px 10px 10px 10px;/*10px 10px 10px 10px*/
+	overflow: visible;
+}
+
+nav ul {
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+	overflow: visible;
+}
+
+nav ul li {
+	display: block;
+	font-family: 'Oswald', sans-serif;
+	font-size: 1.2em;
+	text-transform: uppercase;
+}
+
+nav ul li a {
+	display: block;
+	color: white;
+	text-align: center;
+	padding: 14px 16px;
+	text-decoration: none;	
+}
+
+nav ul li ul li {
+	background: #555; 
+	display: block; 
+	font-size: 1em;
+}
+
+nav ul li ul li a {
+	display: block; 
+	text-align: left;
+
+}
+
+nav ul li.dropdown:hover ul {
+	display: block;
+}
+
+
+#curtain-nav {
+	height: 50%;/*100%*/
+	width: 0;/*Hide it as default when loading page*/
+	padding: 0;
+	position: fixed;
+	z-index: 3;
+	top: 0; 
+	right: 0;
+	background-color: rgb(0,0,0);
+	background-color: rgba(0,0,0, 0.9);
+	overflow-x: hidden;
+	transition: 0.5s;	
+}
+
+.curtain-nav-content {
+	/*For curtain menu*/
+	position: relative;
+	top: 15%;
+	width: 100%;
+	text-align: center;
+	margin-top: 30px;	
+	overflow: visible;
+}
+
+.nav-close-button {
+	position: absolute;
+	top: 20px;
+	right: 45px;
+	font-size: 2.0em;
+	color: white;
+	text-decoration: none;
+}
+
+/*Set hover effect for items in the menu*/
+.active {
+	background-color: #FF9633;
+}
+
+li:hover:not(.active) {
+	background-color: green;
+}
+
+/*Define style for the main area*/
+/*Main area*/
+main {
+	min-height: 85vh;
+	background-color: gray;
+
+	/*use CSS grid*/
+	display: grid;
+	grid-template-areas: "area-1" "area-2" "area-3" "area-4" "area-5";
+}
+
+.showcase {
+	grid-area: area-1;
+	height: 40vh;
+}
+
+.showcase-photo {
+	background-image: url("../MEDIA/codecode.webp");
+	filter: blur(8px);
+	height: 100%;
+	-webkit-filter: blur(8px);
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+
+.showcase-text {
+	background-color: rgb(0,0,0);
+	background-color: rgba(0,0,0, 0.4);
+	color: white;
+	font-weight: bold;
+	border: 3px solid #f1f1f1;
+	position: absolute;
+	top: 30%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	z-index: 2;
+	width: 80%;
+	padding: 20px;
+	text-align: center;
+}
+
+/*-------------------------------------------------------------------------------------------------------------------*/
+
+.bio-container {
+	display: flex;
+	flex-direction: row;
+	position: relative;
+
+	grid-area: area-2;
+	min-height: 55vh;
+	background-color: #F1C40F;
+}
+
+.bio-box1 {
+	flex: 0;
+
+	display: flex;
+	justify-content: left;
+	align-items: center;
+	position: absolute;
+
+	top: 5%;
+	margin-left: 1%;
+}
+
+.bio-name {
+	font-size: 2em;
+	font-weight: bold;
+}
+
+.bio-box2 {
+	flex: 1;
+
+	display: flex;
+	flex-direction: column;
+	justify-content: left;
+	align-items: center;
+	position: absolute;
+	
+	top: 10px;
+	margin: 5%;
+}
+
+.bio-img {
+	max-width: 35%;
+	height: auto;
+}
+
+.bio-text {
+	font-size: 5mm;
+	font-weight: bold;
+}
+
+/*-------------------------------------------------------------------------------------------------------------------------*/
+
+.web-container {
+	display: flex;
+	flex-direction: column;
+	position: relative;
+
+	grid-area: area-3;
+	min-height: 35vh;
+	background-color: #EC7063;
+}
+
+.web-box1 {
+	flex: 3;
+
+	display: flex;
+	justify-content: left;
+	align-items: center;
+	position: absolute;
+
+	top: 10%;
+	margin-left: 1%;
+}
+
+.web-name {
+	font-size: 6mm;
+	font-weight: bold;
+}
+
+.web-box2 {
+	flex: 2;
+
+	display: flex;
+	justify-content: left;
+	align-items: center;
+	position: absolute;
+
+	top: 20%;
+	margin-left: 1%;
+}
+
+.web-box3 {
+	flex: 3;
+
+	display: flex;
+	justify-content: left;
+	align-items: center;
+	position: absolute;
+
+	top: 30%;
+	margin-left: 1%;
+}
+
+.web-name2 {
+	font-size: 5mm;
+	font-weight: bold;
+}
+
+.web-list {
+	font-size: 5mm;
+	font-weight: 200;
+}
+
+.web-top5 {
+	text-decoration: none;
+}
+
+a:link {
+	text-decoration: none;
+  }
+  
+a:visited {
+	text-decoration: none;
+}
+
+/*-----------------------------------------------------*/
+
+.competences {
+	display: flex;
+	flex-direction: column;
+	position: relative;
+
+	grid-area: area-4;
+	min-height: 90vh;
+	background-color: #DAF7A6;
+}
+
+.comp-box1 {
+	flex: 3;
+
+	display: flex;
+	justify-content: left;
+	align-items: center;
+	position: absolute;
+
+	top: 5%;
+	margin-left: 1%;
+	font-size: 6mm;
+	font-weight: bold;
+}
+
+.flip-box {
+	background-color: transparent;
+	width: 300px;
+	height: 200px;
+	border: 1px solid #f1f1f1;
+	perspective: 1000px;
+	position: absolute;
+
+	top: 100px;
+	left: 10px;
+}
+
+.flip-box2 {
+	background-color: transparent;
+	width: 300px;
+	height: 200px;
+	border: 1px solid #f1f1f1;
+	perspective: 1000px;
+	position: absolute;
+
+	top: 315px;
+	left: 10px;
+}
+
+.flip-box3 {
+	background-color: transparent;
+	width: 300px;
+	height: 200px;
+	border: 1px solid #f1f1f1;
+	perspective: 1000px;
+	position: absolute;
+
+	top: 530px;
+	left: 10px;
+}
+  
+.flip-box-inner {
+	width: 100%;
+	height: 100%;
+	text-align: center;
+	transition: transform 0.8s;
+	transform-style: preserve-3d;
+}
+  
+.flip-box:hover .flip-box-inner {
+	transform: rotateY(180deg);
+}
+
+.flip-box2:hover .flip-box-inner {
+	transform: rotateY(180deg);
+}
+
+.flip-box3:hover .flip-box-inner {
+	transform: rotateY(180deg);
+}
+  
+.flip-box-front, .flip-box-back {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	-webkit-backface-visibility: hidden;
+	backface-visibility: hidden;
+}
+  
+.flip-box-front {
+	background-color: lightblue;
+	color: black;
+}
+  
+.flip-box-back {
+	background-color: green;
+	color: white;
+	transform: rotateY(180deg);
+}
+
+.flip-box-text {
+	flex: 1;
+
+	display: flex;
+	justify-content: left;
+	align-items: center;
+	position: absolute;
+
+	top: 35%;
+}
+
+.flip-box-img {
+	flex: 1;
+
+	display: flex;
+	justify-content: left;
+	align-items: center;
+	position: absolute;
+
+	border-radius: 50%;
+	width: 50%;
+	height: auto;
+	top: 15%;
+	left: 45%;
+}
+
+.flip-box2-text {
+	flex: 1;
+
+	display: flex;
+	justify-content: left;
+	align-items: center;
+	position: absolute;
+
+	top: 35%;
+}
+
+.flip-box2-img {
+	flex: 1;
+
+	display: flex;
+	justify-content: left;
+	align-items: center;
+	position: absolute;
+
+	border-radius: 50%;
+	width: 50%;
+	height: auto;
+	top: 15%;
+	left: 45%;
+}
+
+.flip-box3-text {
+	flex: 1;
+
+	display: flex;
+	justify-content: left;
+	align-items: center;
+	position: absolute;
+
+	top: 35%;
+}
+
+.flip-box3-img {
+	flex: 1;
+
+	display: flex;
+	justify-content: left;
+	align-items: center;
+	position: absolute;
+
+	border-radius: 50%;
+	width: 50%;
+	height: auto;
+	top: 15%;
+	left: 45%;
+}
+
+/*----------------------------------------------------------------------------*/
+
+.statement {
+	display: flex;
+	flex-direction: column;
+	position: relative;
+
+	grid-area: area-5;
+	min-height: 50vh;
+	background-color: #FF7F50;
+}
+
+.statement-name {
+	flex: 3;
+
+	display: flex;
+	justify-content: left;
+	align-items: center;
+	position: absolute;
+
+	top: 5%;
+	margin-left: 1%;
+	font-size: 6mm;
+	font-weight: bold;
+}
+
+.statement-text {
+	flex: 1;
+
+	display: flex;
+	flex-direction: column;
+	justify-content: left;
+	align-items: center;
+	position: absolute;
+	
+	top: 50px;
+	margin: 5%;
+
+	font-size: 5mm;
+	font-weight: bold;
+}
+
+/*---------------------------------------------------------------------*/
+
+.comment-box1 {
+	height: 150px;
+}
+
+/*----------------------------------------------------------------------------------*/
+
+.cart-box1 {
+	height: 150px;
+}
+
+/*--------------------------------------------------------------------------------------------*/
+
+#snackbar {
+	visibility: hidden;
+	min-width: 250px;
+	margin-left: -125px;
+	background-color: #333;
+	color: #fff;
+	text-align: center;
+	border-radius: 2px;
+	padding: 16px;
+	position: fixed;
+	z-index: 1;
+	left: 50%;
+	bottom: 30px;
+	font-size: 17px;
+}
+  
+#snackbar.show {
+	visibility: visible;
+	-webkit-animation: fadein 0.5s, fadeout 0.5s 2.5s;
+	animation: fadein 0.5s, fadeout 0.5s 2.5s;
+}
+  
+@-webkit-keyframes fadein {
+	from {bottom: 0; opacity: 0;} 
+	to {bottom: 30px; opacity: 1;}
+}
+  
+@keyframes fadein {
+	from {bottom: 0; opacity: 0;}
+	to {bottom: 30px; opacity: 1;}
+}
+  
+@-webkit-keyframes fadeout {
+	from {bottom: 30px; opacity: 1;} 
+	to {bottom: 0; opacity: 0;}
+}
+  
+@keyframes fadeout {
+	from {bottom: 30px; opacity: 1;}
+	to {bottom: 0; opacity: 0;}
+}
+
+/*---------------------------------------------------------------------------------------------*/
+
+.notification {
+	background-color: #555;
+	color: white;
+	text-decoration: none;
+	padding: 15px 26px;
+	position: relative;
+	display: inline-block;
+	border-radius: 2px;
+}
+  
+.notification:hover {
+	background: red;
+	color: white;
+}
+  
+.notification .badge {
+	position: absolute;
+	top: -10px;
+	right: -10px;
+	padding: 5px 10px;
+	border-radius: 50%;
+	background-color: red;
+	color: white;
+}
+
+/*-----------------------------------------------------------------------------------------*/
+
+/* entire container, keeps perspective */
+.flip-container {
+	perspective: 1000px;
+	-webkit-perspective: 1000;
+    -moz-perspective: 1000;
+    -o-perspective: 1000;
+}
+/* flip the pane when hovered */
+.flip-container:hover .flipper, .flip-container.hover .flipper {
+	transform: rotateY(180deg);
+}
+
+.flip-container, .front, .back {
+	width: 100%;
+	height: 400px;
+}
+
+/* flip speed goes here */
+.flipper {
+	transition: 0.6s;
+	transform-style: preserve-3d;
+	position: relative;
+}
+
+/* hide back of pane during swap */
+.front, .back {
+	backface-visibility: hidden;
+	position: absolute;
+	top: 0;
+	left: 0;
+  padding: 10px;
+}
+
+/* front pane, placed above back */
+.front {
+	z-index: 2;
+	/* for firefox 31 */
+	transform: rotateY(0deg);
+  -webkit-transform: rotateY(0deg);
+  	background: #E5E9F1;
+}
+
+/* back, initially hidden pane */
+.back {
+	transform: rotateY(180deg);
+  -webkit-transform: rotateY(180deg);
+}
+.thumbnail{
+background: none;
+  border: none;
+}
+.mb{margin-bottom: 20px;}
+
+/*-------------------------------------------------*/
+/*RESPONSIVE CSS*/
+/*THUMB RULE: Mobile First
+  Use min-width to detect device screen size.
+  min-width: 768px means that "when viewport is 768px or larger (Tablet or PC), set these styles; 
+             otherwise (Mobile) set above styles"  
+*/
+@media screen and (min-width: 350px) {
+
+	.flip-box {
+		background-color: transparent;
+		width: 350px;
+		height: 200px;
+		border: 1px solid #f1f1f1;
+		perspective: 1000px;
+		position: absolute;
+	
+		top: 100px;
+		left: 10px;
+	}
+
+	.flip-box2 {
+		background-color: transparent;
+		width: 350px;
+		height: 200px;
+		border: 1px solid #f1f1f1;
+		perspective: 1000px;
+		position: absolute;
+	
+		top: 315px;
+		left: 10px;
+	}
+
+	.flip-box3 {
+		background-color: transparent;
+		width: 350px;
+		height: 200px;
+		border: 1px solid #f1f1f1;
+		perspective: 1000px;
+		position: absolute;
+	
+		top: 530px;
+		left: 10px;
+	}
+
+	.flip-box-img {
+		flex: 1;
+	
+		display: flex;
+		justify-content: left;
+		align-items: center;
+		position: absolute;
+	
+		border-radius: 50%;
+		width: 45%;
+		height: auto;
+		top: 10%;
+		left: 45%;
+	}
+
+	.created-text {
+		flex: 0;
+		
+		/*Centering both vertical and horizontal*/
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		position: absolute;
+	
+		top: 65%;
+		left: 24%;
+	}
+	
+	
+	.fa-align {
+		flex: 1;
+	
+		display: flex;
+		justify-content: left;
+		align-items: center;
+		position: absolute;
+	
+		top: 5%;
+		left: 11%;
+	}
+	
+}
+
+@media screen and (min-width: 400px) {
+
+	.flip-box {
+		background-color: transparent;
+		width: 400px;
+		height: 200px;
+		border: 1px solid #f1f1f1;
+		perspective: 1000px;
+		position: absolute;
+	
+		top: 100px;
+		left: 10px;
+	}
+
+	.flip-box2 {
+		background-color: transparent;
+		width: 400px;
+		height: 200px;
+		border: 1px solid #f1f1f1;
+		perspective: 1000px;
+		position: absolute;
+	
+		top: 315px;
+		left: 10px;
+	}
+
+	.flip-box3 {
+		background-color: transparent;
+		width: 400px;
+		height: 200px;
+		border: 1px solid #f1f1f1;
+		perspective: 1000px;
+		position: absolute;
+	
+		top: 530px;
+		left: 10px;
+	}
+
+	.flip-box-img {
+		flex: 1;
+	
+		display: flex;
+		justify-content: left;
+		align-items: center;
+		position: absolute;
+	
+		border-radius: 50%;
+		width: 45%;
+		height: auto;
+		top: 5%;
+		left: 45%;
+	}
+
+	.created-text {
+		flex: 0;
+		
+		/*Centering both vertical and horizontal*/
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		position: absolute;
+	
+		top: 65%;
+		left: 29%;
+	}
+	
+	
+	.fa-align {
+		flex: 1;
+	
+		display: flex;
+		justify-content: left;
+		align-items: center;
+		position: absolute;
+	
+		top: 5%;
+		left: 16%;
+	}
+}
+
+@media screen and (min-width: 768px) {
+	
+   /*Make Horizontal nav visible*/
+   .horizontal-nav {
+	   	display: block;
+	   
+	   	background-color: #DAF7A6; 
+		padding: 10px 10px 10px 10px;
+   }
+   
+   .horizontal-nav ul {
+		list-style-type: none;
+		margin: 0;
+		padding: 0;
+		overflow: hidden;
+	}
+
+	.horizontal-nav ul li {
+		display: inline-block;
+		font-family: 'Oswald', sans-serif;
+		font-size: 1.0em;
+	}
+
+	.horizontal-nav ul li a {
+		display: block;
+		color: black;
+		text-align: center;
+		padding: 14px 16px;
+		text-decoration: none;	
+	}
+
+	.horizontal-nav ul li:hover:not(.active) {
+		background-color: green;
+	}
+
+	.box-3 {
+		flex: 4; /*horizontal nav on desktop*/
+		
+		/*Centering the content both vertical and horizontal*/
+		display: flex;
+		justify-content: center;
+		align-items: center;	
+		position: absolute;
+
+		left: 34.7%;
+		top: 1.5%;
+	}
+
+	.nav-1 {
+		display: none;
+	}
+
+	.box-4 {
+		display: none;
+	}
+
+	/*Change layout to big screen*/
+	main {
+		/*use CSS grid*/
+		display: grid;
+		grid-template-areas: "area-1 area-1" "area-2 area-3" "area-4 area-4" "area-5 area-5";
+	}
+
+	.bio-container {
+		display: flex;
+		flex-direction: row;
+		position: relative;
+		overflow: auto;
+	
+		grid-area: area-2;
+		min-height: 35vh;
+		background-color: #F1C40F;
+	}
+
+	.bio-box2 {
+		flex: 1;
+	
+		display: flex;
+		flex-direction: row;
+		justify-content: left;
+		align-items: center;
+		position: absolute;
+		
+		top: 10px;
+		left: 20px;
+	}
+
+	.bio-img {
+		max-width: 15%;
+		height: auto;
+	}
+
+	.web-container {
+		display: flex;
+		flex-direction: column;
+		position: relative;
+	
+		grid-area: area-3;
+		min-height: 35vh;
+		background-color: #EC7063;
+	}
+
+	.web-box1 {
+		flex: 3;
+	
+		display: flex;
+		justify-content: left;
+		align-items: center;
+		position: absolute;
+	
+		top: 5%;
+		margin-left: 1%;
+	}
+
+	.web-name {
+		font-size: 7mm;
+		font-weight: bold;
+	}
+
+	.web-box2 {
+		flex: 2;
+	
+		display: flex;
+		justify-content: left;
+		align-items: center;
+		position: absolute;
+	
+		top: 60px;
+	}
+
+	.web-name2 {
+		font-size: 6mm;
+		font-weight: bold;
+	}
+	
+	.web-box3 {
+		flex: 3;
+	
+		display: flex;
+		justify-content: left;
+		align-items: center;
+		position: absolute;
+	
+		top: 100px;
+	}
+
+	.competences {
+		display: flex;
+		flex-direction: column;
+		position: relative;
+	
+		grid-area: area-4;
+		min-height: 45vh;
+		background-color: #DAF7A6;
+	}
+
+	.flip-box {
+		background-color: transparent;
+		width: 400px;
+		height: 300px;
+		border: 1px solid #f1f1f1;
+		perspective: 1000px;
+		position: absolute;
+	
+		top: 100px;
+		left: 10%;
+	}
+
+	.flip-box2 {
+		background-color: transparent;
+		width: 400px;
+		height: 300px;
+		border: 1px solid #f1f1f1;
+		perspective: 1000px;
+		position: absolute;
+	
+		top: 100px;
+		left: 40%;
+	}
+
+	.flip-box3 {
+		background-color: transparent;
+		width: 400px;
+		height: 300px;
+		border: 1px solid #f1f1f1;
+		perspective: 1000px;
+		position: absolute;
+	
+		top: 100px;
+		left: 70%;
+	}
+
+	.flip-box-text {
+		flex: 1;
+	
+		display: flex;
+		justify-content: left;
+		align-items: center;
+		position: absolute;
+	
+		top: 0%;
+		left: 35%;
+	}
+	
+	.flip-box2-text {
+		flex: 1;
+	
+		display: flex;
+		justify-content: left;
+		align-items: center;
+		position: absolute;
+	
+		top: 0%;
+		left: 35%;
+	}
+	
+	.flip-box3-text {
+		flex: 1;
+	
+		display: flex;
+		justify-content: left;
+		align-items: center;
+		position: absolute;
+	
+		top: 0%;
+		left: 35%;
+	}
+
+	.flip-box-img {
+		flex: 1;
+	
+		display: flex;
+		justify-content: left;
+		align-items: center;
+		position: absolute;
+	
+		border-radius: 50%;
+		width: 45%;
+		height: auto;
+		top: 25%;
+		left: 25%;
+	}
+
+	.statement {
+		display: flex;
+		flex-direction: column;
+		position: relative;
+	
+		grid-area: area-5;
+		min-height: 40vh;
+		background-color: #FF7F50;
+	}
+	
+	.statement-name {
+		flex: 3;
+	
+		display: flex;
+		justify-content: left;
+		align-items: center;
+		position: absolute;
+	
+		top: 5%;
+		margin-left: 1%;
+		font-size: 8mm;
+		font-weight: bold;
+	}
+
+	.statement-text {
+		flex: 1;
+	
+		display: flex;
+		flex-direction: column;
+		justify-content: left;
+		align-items: center;
+		position: absolute;
+		
+		top: 20px;
+		margin: 5%;
+	
+		font-size: 7mm;
+		font-weight: bold;
+	}
+
+	.comment-box1 {
+		height: 250px;
+	}
+
+	.cart-box1 {
+		height: 250px;
+	}
+
+	footer {
+		height: 10vh;
+		background-color: #DAF7A6;
+		position: relative;
+	}
+
+	.created-text {
+		flex: 0;
+		
+		/*Centering both vertical and horizontal*/
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		position: absolute;
+	
+		top: 35%;
+		left: 43%;
+	}
+	
+	
+	.fa-align {
+		flex: 1;
+	
+		display: flex;
+		justify-content: left;
+		align-items: center;
+		position: absolute;
+	
+		top: 10%;
+		left: 1%;
+	}
+}
+
+

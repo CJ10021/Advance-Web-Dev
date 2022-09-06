@@ -1,0 +1,243 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Lab2-1</title>
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+	<link rel="stylesheet" type="text/css" href="CSS/style.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+	<!------------------------------BODY------------------------------------------------>
+<body>
+	<!---------------------------------------------------->	
+	<header>
+		<div class="position-relative text-center p-5" style="background-color: #daf7a6;">
+			<div class="position-absolute top-50 start-0 translate-middle-y">
+				<img src="MEDIA/global.png" alt="Logo"/>
+			</div>
+	
+			<div class="position-relative">
+				<p class="position-absolute top-50 start-0 translate-middle-y fs-4" style="margin-left: 20px;">ITWD6.408 </p>
+			</div>
+	
+			<div class="position-relative">
+				<div class="position-absolute top-50 start-50 translate-middle horizontal-nav">
+					<ul>
+						<li><a href="index.html">HOME</a></li>
+						<li><a href="forms.html">FORMS</a></li>
+						<li><a href="xml-rss.html">XML/JSON</a></li>
+						<li><a href="javascript.html">JAVASCRIPT</a></li>
+						<li class="active"><a href="research.html">RESEARCH</a></li>	
+					</ul>
+				</div>			
+			</div>
+	
+			<div class="position-relative">
+				<div class="nav-1 position-absolute top-50 end-0 translate-middle-y" style="font-size: 4.0em; cursor: pointer;" onclick="openNav()">≡</div>
+			</div>
+		</div>
+
+		<!--Curtain menu: collapse this menu as default when loading the page-->
+		<nav id="curtain-nav">
+			<!--Add a close button (X) hyperlink on the top left corner-->
+			<a href="javascript:void(0)" class="nav-close-button" onclick="closeNav()">❌</a>
+			<div class="curtain-nav-content">
+				<ul>
+					<li><a href="index.html">HOME</a></li>
+					<li><a href="forms.html">FORMS</a></li>
+					<li><a href="xml-rss.html">XML/JSON</a></li>
+					<li><a href="javascript.html">JAVASCRIPT</a></li>
+					<li class="active"><a href="research.html">RESEARCH</a></li>	
+				</ul>
+			</div>
+		</nav>
+	</header>
+
+	<div>
+		<div class="row text-center mb">
+
+		</div>
+		<div class="row">
+			<div class="col-md-4 mb">
+				<div class="flip-container">
+					<div class="flipper">
+						<div class="front">
+							<div class="thumbnail">
+								<div class="caption text-center">
+									<h3 class="">Copyright, Creative Common (CC) Licenses, Fair Use</h3><br>
+	
+									<img class="img-responsive cart-box1" src="http://d2klr1ixr44jla.cloudfront.net/0/0/assets/images/551326f8b13b7baa41000047.png" alt="#">
+								</div>
+							</div>
+						</div>
+						<div class="back">
+							<h2 class="">Creative Commons is a non-profit intellectual property licensing organization.</h2>
+	
+							<p class="">The licenses are free and allow authors to protect their work with a variety of different restrictions:
+
+								Attribution - use, distribution, derivative works are allowed with citation.
+								Noncommercial - use, distribution, derivative works are allowed as long as it’s not for commercial purposes.
+								No Derivative Works - any use, distribution, etc. allowed as long as it’s verbatim.
+								Share Alike - derivative works allowed so long as they are licensed under the same conditions as the original.</p>
+
+							</p>
+						</div>
+					</div>
+				</div>
+
+				</p>
+			</div>
+			<div class="col-md-4 mb">
+				<div class="flip-container">
+					<div class="flipper">
+						<div class="front">
+							<div class="thumbnail">
+								<div class="caption text-center">
+									<h3 class="">Privacy & Privacy Policy</h3><br>
+	
+									<img class="cart-box1" src="https://digitalprodyatesnzweb.blob.core.windows.net/cache/4/d/3/2/0/3/4d32036f6e8ff923e8ba452bf5bbe59172146db2.jpg" alt="#">
+								</div>
+							</div>
+						</div>
+						<div class="back overflow-auto">
+							<h2 class="">Privacy & Privacy Policy</h2>
+	
+							<p class="">A privacy policy is a statement or legal document (in privacy law) that discloses some or all of the ways a party gathers, uses, discloses, and manages a customer or client's data.
+								Personal information can be anything that can be used to identify an individual, not limited to the person's name, address, date of birth, marital status, contact information, ID issue, and expiry date, financial records, credit information, medical history, where one travels, and intentions to acquire goods and services.
+								In the case of a business, it is often a statement that declares a party's policy on how it collects, stores, and releases personal information it collects. It informs the client what specific information is collected, and whether it is kept confidential, shared with partners, or sold to other firms or enterprises.
+								Privacy policies typically represent a broader, more generalized treatment, as opposed to data use statements, which tend to be more detailed and specific.</p>
+	
+							</p>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="col-md-4 mb">
+				<div class="flip-container">
+					<div class="flipper">
+						<div class="front">
+							<div class="thumbnail">
+								<div class="caption text-center">
+									<h3 class="">How to improve your website seo?</h3>
+	
+									<img class="cart-box1" src="https://www.htmlgoodies.com/wp-content/uploads/2021/09/digital-marketing-SEO-tutorial.jpg" alt="#">
+								</div>
+							</div>
+						</div>
+						<div class="back">
+							<h2 class="">How to improve your website seo</h2>
+	
+							<p class="">SEO stands for “search engine optimization.” In simple terms, it means the process of improving your site to 
+								increase its visibility when people search for products or services related to your business in Google, Bing, and other search engines. 
+								The better visibility your pages have in search results, the more likely you are to garner attention and attract prospective and existing customers to your business.</p>
+	
+							</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="row">
+			<div class="col-md-4 mb">
+				<div class="flip-container">
+					<div class="flipper">
+						<div class="front">
+							<div class="thumbnail">
+								<div class="caption text-center">
+									<h3 class="">Factors you should know when choosing a right web hosting provider</h3><br>
+	
+									<img class="img-responsive cart-box1" src="https://www.dreamhost.com/academy/wp-content/uploads/2020/12/what-is-web-hosting.jpg" alt="#">
+								</div>
+							</div>
+						</div>
+						<div class="back">
+							<h2 class="">Factors you should know when choosing a right web hosting provider</h2>
+	
+							<p class="">Web publishing is the process of publishing original content on the Internet. 
+								The process includes building and uploading websites, updating the associated webpages, and posting content to these webpages online. 
+								Web publishing comprises of personal, business, and community websites in addition to e-books and blogs.</p>
+
+							</p>
+						</div>
+					</div>
+				</div>
+
+				</p>
+			</div>
+			<div class="col-md-4 mb">
+				<div class="flip-container">
+					<div class="flipper">
+						<div class="front">
+							<div class="thumbnail">
+								<div class="caption text-center">
+									<h3 class="">WEB PERFORMANCE AND MAINTENACE</h3><br>
+	
+									<img class="cart-box1" src="https://static.wixstatic.com/media/6542d9_7a5222c11d1a490dafb89b3d6282ed20~mv2.jpg/v1/fill/w_1000,h_571,al_c,q_90,usm_0.66_1.00_0.01/6542d9_7a5222c11d1a490dafb89b3d6282ed20~mv2.jpg" alt="#">
+								</div>
+							</div>
+						</div>
+						<div class="back overflow-auto">
+							<h2 class="">WEB PERFORMANCE AND MAINTENACE</h2>
+	
+							<p class="">One of the great advantages of using the Open Source WordPress platform is that we can leverage the work of hundreds of thousands of developers around the world who are all working to improve the platform continually.
+
+								Website maintenance is all about implementing those critical updates to your site to keep it current and optimised. These updates cover both performance improvements but also bug fixes and security patches.</p>
+	
+							</p>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="col-md-4 mb">
+				<div class="flip-container">
+					<div class="flipper">
+						<div class="front">
+							<div class="thumbnail">
+								<div class="caption text-center">
+									<h3 class="">WEB SECURITY</h3>
+	
+									<img class="cart-box1" src="https://imageio.forbes.com/specials-images/imageserve/62342d7cff3f57f81cc02f75/The-Biggest-Cyber-Security-Risks-In-2022/960x0.jpg?format=jpg&width=960" alt="#">
+								</div>
+							</div>
+						</div>
+						<div class="back">
+							<h2 class="">WEB SECURITY</h2>
+	
+							<p class="">Web security refers to protecting networks and computer systems from damage to or the theft of software, hardware, or data. 
+								It includes protecting computer systems from misdirecting or disrupting the services they are designed to provide.</p>
+	
+							</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div id="push" class=""></div>
+	
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
+
+	<!---------------------------------------------------->	
+	<!--Footer section-->
+	<footer>
+		<div class="fa-align">
+			<a href="#" class="fa fa-linkedin"></a>
+			<a href="#" class="fa fa-youtube"></a>
+			<a href="#" class="fa fa-twitter"></a>
+			<a href="#" class="fa fa-facebook"></a>
+			<a href="#" class="fa fa-instagram"></a>
+		</div>
+
+		<div class="created-text"> &copy;Created by: Carl Inguanzo <br />
+		</div>
+	</footer>
+	
+	<!--Embed the js file at the bottom of the html file-->
+	<script type="text/javascript" src="JS/javascript.js">
+	</script>
+
+</body>
+</html>
